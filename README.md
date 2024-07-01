@@ -1,2 +1,1 @@
 # club-hub
-Club manager
