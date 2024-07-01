@@ -4,7 +4,7 @@ import { Api } from "../api/api";
 import { ApiError, StatusCode } from "../api/error";
 import { FullUser } from "../api/generated";
 import CONSOLE from "../utils/console";
-import Login from "../views/login/login";
+import Login from "../views/login";
 import WS from "../api/ws";
 
 /** The global {@link UserProvider} instance */

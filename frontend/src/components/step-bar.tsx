@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { Text } from "./text";
 import { CheckIcon } from "@heroicons/react/24/solid";
 import { clsx } from "clsx";
 
@@ -37,7 +38,10 @@ export default function StepBar(props: StepBarProps) {
         <nav aria-label={t("accessibility.progress")} className={props.className}>
             <ol role={"list"} className={"overflow-hidden"}>
                 {steps.map((step, idx) => (
-                    <li key={step.label} className={clsx("relative", idx !== steps.length - 1 && space === undefined ? "pb-10" : space)}>
+                    <li
+                        key={step.label}
+                        className={clsx("relative", idx !== steps.length - 1 && space === undefined ? "pb-10" : space)}
+                    >
                         {/* connection */}
                         {idx !== steps.length - 1 && (
                             <div
@@ -52,7 +56,11 @@ export default function StepBar(props: StepBarProps) {
                         <div className={"relative flex items-center"}>
                             {/* Bubble */}
                             <span className={"flex h-9 items-center"}>
-                                <span className={"relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-blue-600"}>
+                                <span
+                                    className={
+                                        "relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-blue-600"
+                                    }
+                                >
                                     {step.state === "finished" ? (
                                         <CheckIcon className={"h-5 w-5 text-white"} />
                                     ) : step.state === "active" ? (
@@ -77,8 +85,14 @@ export default function StepBar(props: StepBarProps) {
 
                             {/* Text */}
                             <span className={"ml-4 flex min-w-0 flex-col justify-center"}>
-                                <span className={"!text-sm font-medium !text-zinc-800 dark:!text-zinc-50"}>{step.label}</span>
-                                {step.description && <span className={"text-sm text-zinc-600 dark:text-zinc-400"}>{step.description}</span>}
+                                <Text className={"!text-sm font-medium !text-zinc-800 dark:!text-zinc-50"}>
+                                    {step.label}
+                                </Text>
+                                {step.description && (
+                                    <span className={"text-sm text-zinc-600 dark:text-zinc-400"}>
+                                        {step.description}
+                                    </span>
+                                )}
                             </span>
                         </div>
                     </li>

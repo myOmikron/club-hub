@@ -1,7 +1,7 @@
 import React from "react";
 import { toast } from "react-toastify";
-import { Api } from "../../api/api";
-import Form from "../../components/form";
+import { Api } from "../api/api";
+import Form from "../components/form";
 import { useForm } from "@tanstack/react-form";
 
 /**
